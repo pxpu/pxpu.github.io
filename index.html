@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN" translate="no"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+    <meta name="theme-color" content="#000000">
+    <meta name="keywords" content="皮小铺,永久发布页">
+    <meta name="description" content="皮小铺丨永久发布页">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" href="">
+    <title>皮小铺丨永久发布页</title>
+    <style type="text/css">
+      #main-splash-screen {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #121212;
+        z-index: 99999;
+        pointer-events: none;
+      }
+
+      #main-splash-screen .center {
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      #main-splash-screen .logo {
+        width: 180px;
+        margin: auto;
+      }
+      #main-splash-screen .logo img {
+        width: 180px;
+      }
+      #main-splash-screen .title {
+        color: white;
+        text-align: center;
+        padding-top: 32px;
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      #main-splash-screen .spinner {
+        position: relative;
+        margin: auto;
+        box-sizing: border-box;
+        background-clip: padding-box;
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+        border: 4px solid rgba(255, 255, 255, 0.1);
+        -webkit-mask: linear-gradient(rgba(0, 0, 0, 0.1), #000000 90%);
+        transform-origin: 50% 60%;
+        transform: perspective(200px) rotateX(66deg);
+        animation: spinner-wiggle 1.2s infinite;
+      }
+      #main-splash-screen .spinner:before,
+      #main-splash-screen .spinner:after {
+        content: '';
+        position: absolute;
+        margin: -4px;
+        box-sizing: inherit;
+        width: inherit;
+        height: inherit;
+        border-radius: inherit;
+        opacity: 0.05;
+        border: inherit;
+        border-color: transparent;
+        animation: spinner-spin 1.2s cubic-bezier(0.6, 0.2, 0, 0.8) infinite, spinner-fade 1.2s linear infinite;
+      }
+
+      #main-splash-screen .spinner:before {
+        border-top-color: #66e6ff;
+      }
+
+      #main-splash-screen .spinner:after {
+        border-top-color: #f0db75;
+        animation-delay: 0.3s;
+      }
+
+      @keyframes spinner-spin {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner-fade {
+        20% {
+          opacity: 0.1;
+        }
+        40% {
+          opacity: 1;
+        }
+        60% {
+          opacity: 0.1;
+        }
+      }
+    </style>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?711867ab8048c977b20e3b425e2af5d5";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+  </head>
+  <body style="">
+    <div id="root" class="flex">
+      <div id="main-splash-screen">
+        <div class="center">
+          <div class="logo">
+            <img src="./img/logo.png" alt="logo">
+          </div>
+          <div class="title">⚠收藏网址丨以防失联⚠</div>
+          <div class="title">正在前往真实地址</div>
+          <div class="title">👇转5圈后跳转👇</div>
+          <div class="spinner"></div>
+        </div>
+      </div>
+    <iframe src="welcome.html" scrolling="auto" width="200px" height="100px" style="display: none;" id="mmFrameId_0.6746717186722506"></iframe></div>
+    <script type="text/javascript" async="" src="js/f.js"></script><script type="text/javascript" async="" src="js/js.js"></script><script>
+
+      var welcomeurl = 'https://emoacc.shop/'
+        newurl = 'https://emoacc.shop/'
+
+      setTimeout(function () {
+        window.location.href = newurl
+      }, 5000)
+      function createIframe() {
+        var i = document.createElement('iframe')
+        i.src = welcomeurl
+        i.style = 'display:none'
+        i.scrolling = 'auto'
+        i.frameborder = '0'
+        i.width = '200px'
+        i.height = '100px'
+        document.getElementById('root').appendChild(i)
+      }
+
+    </script></body></html>
