@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>GitHub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #00bfa5, #00695c);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            padding: 20px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        form {
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 550px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        input.url {
+            font-size: 16px;
+            padding: 12px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+
+        input.url:focus {
+            border-color: #00bfa5;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 191, 165, 0.5);
+        }
+
+        .bar {
+            content: '';
+            display: block;
+            height: 2px;
+            background: #00bfa5;
+            width: 0;
+            transition: width 0.3s ease;
+        }
+
+        input.url:focus~.bar {
+            width: 100%;
+        }
+
+        .btn {
+            background-color: #00bfa5;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: #00796b;
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .tips,
+        .example {
+            text-align: left;
+            font-size: 14px;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        .tips p:first-child::before {
+            content: 'PS：';
+            font-weight: bold;
+            color: #333;
+        }
+
+        .example p:first-child::before {
+            content: '示例：';
+            font-weight: bold;
+            color: #333;
+        }
+
+        a {
+            color: #00bfa5;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            form {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .btn {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+    <script>
+        function toSubmit(e) {
+            e.preventDefault();
+            const urlInput = document.querySelector('input[name="q"]');
+            if (urlInput && urlInput.value) {
+                const targetUrl = location.href.substr(0, location.href.lastIndexOf('/') + 1) + urlInput.value;
+                window.open(targetUrl, '_blank');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>GitHub</h1>
+
+    <form onsubmit="toSubmit(event)">
+        <label>
+            <input class="url" name="q" type="text" placeholder="输入GitHub文件链接"
+                pattern="^((https|http):\/\/)?(github\.com\/.+?\/.+?\/(?:releases|archive|blob|raw|suites)|((?:raw|gist)\.(?:githubusercontent|github)\.com))\/.+$"
+                required>
+            <div class="bar"></div>
+        </label>
+        <button type="submit" class="btn">下载</button>
+    </form>
+</body>
+
+</html>
